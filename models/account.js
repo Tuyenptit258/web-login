@@ -15,6 +15,8 @@ mongoose.connect('mongodb://localhost/my_database', {
 const Schema = mongoose.Schema;
 
 const AccountSchema = new Schema({
+    name     : String ,
+    email    : String ,
     username : String,
     password : String
 }, {

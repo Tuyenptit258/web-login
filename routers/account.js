@@ -18,10 +18,14 @@ router.get('/',(req,res,next)=>{
 })
 // tao vao database
 router.post('/',(req,res,next)=>{
+    var name = req.body.name
+    var email = req.body.email
     var username = req.body.username
     var password = req.body.password
-
+    
     AccountModel.create({
+        name: name,
+        email: email,
         username: username,
         password: password
     })

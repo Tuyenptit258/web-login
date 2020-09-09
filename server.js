@@ -61,6 +61,8 @@ app.get('/register',(req,res,)=>{
 })
 
 app.post('/register', function(req,res,next){
+    var name = req.body.name
+    var email = req.body.email
     var username = req.body.username
     var password = req.body.password
     AccountModel.findOne({
@@ -72,6 +74,8 @@ app.post('/register', function(req,res,next){
         }
         else{
             return AccountModel.create({
+                name : name,
+                email : email,
                 username : username,
                 password: password
             })
