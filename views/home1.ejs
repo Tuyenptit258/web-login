@@ -11,79 +11,29 @@
     <link rel="stylesheet" href="http://localhost:5500/congkhai/home.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Content here -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Trang Chu <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Iphone Mới <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown active">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Iphone Cũ
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Iphone dùng chưa đến 1 tháng</a>
-                    <a class="dropdown-item" href="#">Iphone dùng chưa đến 1 năm</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Thông tin giá iphone thế giới</a>
-                  </div>
-                </li>
-                <li></li>
-                <li></li>
-                <li class="nav-item active">
-                  <form >
-                    <input class="nav-item active" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success  my-sm-0" type="submit">Search</button>
-                </form>
-                </li>
-              </ul>
-              
-              <form class="form-inline my-1 my-lg-0">
-      
-                
-                <button class="btn btn-outline-success my-2 my-sm-0" type="Đăng kí"><a href="/register">Register</a></button>
-                
-              </form>
-              <form >
-                <button type="submit"><a href="/login">Logout</a></button>
-            </form>
-            </div>
-          </nav>
+    <h1>{{ produces}}</h1>
 
-      </div>
-      <div class="container">
-        <!-- Content here -->
-        <p>
 
-        </p>
-      </div>
-      <div class="container">
+</body>
+</html>
+        <!--/
+        Content here -->
+        
         <!-- Content here -->
-        <p>
-
-        </p>
-      </div>
-      <div class="container">
-        <!-- Content here -->
-        <div class="card-deck">
+        
+        <!-- <div class="card-deck">
             <div class="card">
-                <img src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/9df78eab33525d08d6e5fb8d27136e95/i/p/iphone-11-pro-max-space-select-2019.png" class="card-img-top" alt="...">
+                <img src="{{this.image}}" class="card-img-top" alt="{{this.name}}">
               <div class="card-body">
-                <h5 class="card-title">Iphone X</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-              <div class="card-footer">
+                <h5 class="card-title">{{this.name}}</h5>
+                <p class="card-text">{{this.decription}}</p>
+              </div> -->
+              <!-- <div class="card-footer">
                 <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
-            </div>
-            <div class="card">
+              </div> -->
+            <!-- </div>
+            {{/each}} -->
+            <!-- <div class="card">
               <img src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone11-green-select-2019.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Iphone XS</h5>
@@ -117,8 +67,8 @@
       </div>
       
       <div class="container">
-        <!-- Content here -->
-        <div class="card-deck">
+        Content here -->
+        <!-- <div class="card-deck">
             <div class="card">
               <img src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max-gold-select-2019.png" class="card-img-top" alt="...">
               <div class="card-body">
@@ -154,15 +104,15 @@
               <div class="card-body">
                 <h5 class="card-title">Iphone X</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-              </div>
-              <div class="card-footer">
+              </div> -->
+              <!-- <div class="card-footer">
                 <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
-            </div>
+              </div> -->
+            <!-- </div>
           </div>
-      </div>
+      </div> -->
       
-      <div class="container">
+      <!-- <div class="container">
         
         <div class="row">
           <div class="col-sm">
@@ -191,4 +141,4 @@
         </div>
       </div>
 </body>
-</html>
+</html> -->

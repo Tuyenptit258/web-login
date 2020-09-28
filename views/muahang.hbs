@@ -1,0 +1,101 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="/favicon.ico" type="image/x-icon" rel="icon" />
+    
+    <title>Mua Hang</title>
+</head>
+<body>
+    <div class="hearder">
+    <ul>
+        
+
+    </ul>
+    
+</div>
+<div class="container">
+    <h1>Mời bạn điền chút thông tin</h1>
+<form>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Họ và tên</label>
+    <input type="text" class="form-control" id="name" placeholder="Tên">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Tuổi</label>
+    <input type="text" class="form-control" id="age" placeholder="Tuoi">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Địa chỉ</label>
+    <input type="text" class="form-control" id="address" placeholder="Địa chỉ">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Gmail</label>
+    <input type="text" class="form-control" id="email" placeholder="email">
+  </div>
+  {{!-- <select class="custom-select custom-select-lg mb-3 " id="httt">
+  <option selected>Hình thức thanh toán</option>
+  <option value="1">Thanh toán bằng ví momo</option>
+  <option value="2">Thanh toán bằng thẻ ngân hàng</option>
+  
+</select> --}}
+<button onclick="muahang()">Submit</button>
+</form>
+</div>
+   
+</body>
+<script>
+      function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cname) {
+  var name1 = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name1) == 0) {
+      return c.substring(name1.length, c.length);
+    }
+  }
+  return "";
+}
+    function muahang(){
+        $.ajax({
+            url: '/muahang',
+            type: 'POST',
+            data: {
+            name: $('#name').val(),
+            age: $('#age').val(),
+            address: $('#address').val(),
+            email: $('#email').val(),
+            
+           // httt: $('#httt').val()
+            }
+        }).then(data=>{
+            setCookie('token',data.token,1);
+            window.location.href = '/'
+        })
+        .catch(err=>{
+            console.log('API loi');
+            window.location.href = '/muahang'
+            window.alert('Moi ban dang ki lai, thong tin ban khong dung')
+        })
+    }
+</script>
+</html>
+
